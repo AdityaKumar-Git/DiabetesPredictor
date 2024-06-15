@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: #90ff90; */
+}
+
+body{
+    background: rgb(196,196,196);
+    background: linear-gradient(90deg, rgba(196,196,196,1) 22%, rgba(36,110,168,1) 91%);
+}
+
+header{
+    padding: 16px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+#logo{
+    gap: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3ch;
+}    
+#logo img{
+    width: 60px;
+}
+
+main{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+
+}
+
+#formTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3ch;
+}
+
+#inpForm{
+    margin-top: 30px;
+    width: 50vw;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 20px;
+}
+
+#inpForm form{
+    display: flex;
+    flex-direction: column;
+    gap: 2ch;
+}
+
+#predictButton{
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton{
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.red{
+    color: red;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #000; /* Black border */
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
+
+.result.visible {
+    display: block; /* Only show when it has content */
+}
+
+.result.diabetic {
+    border-color: red; /* Red border for diabetic */
+    color: red; /* Red text color for diabetic */
+}
+
+.result.not-diabetic {
+    border-color: green; /* Green border for not diabetic */
+    color: green; /* Green text color for not diabetic */
+}

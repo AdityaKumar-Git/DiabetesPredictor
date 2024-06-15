@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="container">
+    <header>
+    <nav>
+        <div id="logo">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+            Diabeties <div class="red">Predictor</div>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <div id="formTitle">
+            <h1>Welcome to Diabetes Predictor !!!</h1>
+        </div>
+        <div id="inpForm">
+            <form action="/predict" method="POST">
+                <div><label for="fname">Name :</label>
+                <input type="text", name="fname", placeholder="Enter your Full Name"></div>
+                <div><label for="pregnancies">Number of Pregnancies :</label>
+                <input type="text", name="pregnancies", , placeholder="Only for females"></div>
+                <div><label for="glucose">Glucose :</label>
+                <input type="text", name="glucose"></div>
+                <div><label for="bloodPressure">Blood Pressure :</label>
+                <input type="text", name="bloodPressure"></div>
+                <div><label for="skinThickness">Skin Thickness :</label>
+                <input type="text", name="skinThickness"></div>
+                <div><label for="insulin">Insulin :</label>
+                <input type="text", name="insulin"></div>
+                <div><label for="BMI">BMI :</label>
+                <input type="text", name="BMI"></div>
+                <div><label for="diabetesPedigreeFunction">Diabetes Pedigree Function :</label>
+                <input type="text", name="diabetesPedigreeFunction"></div>
+                <div><label for="age">Age :</label>
+                <input type="text", name="age"></div>
+                <div id="predictButton"><input class="submitButton" type="submit" value="Predict"></div>
+                <div class="result {% if result %}visible {% if 'non' not in result %}diabetic{% else %}not-diabetic{% endif %}{% endif %}">{{result}}</div>
+            </form>
+        </div>
+    </main>
+    </div>
+</body>
+</html>
